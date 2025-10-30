@@ -1,7 +1,9 @@
 import React from "react";
+import img from "../../../assets/image/books.jpg";
+import Banner from "../../components/Banner/Banner";
 
 const Home = () => {
-  return <div>i am home</div>;
+  return <Banner></Banner>;
 };
 
 export default Home;
