@@ -1,9 +1,17 @@
 import React from "react";
-import img from "../../../assets/image/books.jpg";
 import Banner from "../../components/Banner/Banner";
+import Books from "../../components/Books/Books";
+import { useLoaderData } from "react-router";
 
 const Home = () => {
-  return <Banner></Banner>;
+  const data = useLoaderData();
+  console.log(data);
+  return (
+    <div>
+      <Banner></Banner>
+      <Books data={data}></Books>
+    </div>
+  );
 };
 
 export default Home;

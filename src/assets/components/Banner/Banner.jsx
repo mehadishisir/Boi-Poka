@@ -3,7 +3,7 @@ import img from "../../../assets/image/books.jpg";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="bg-gray-100 py-10 px-5  rounded-2xl mb-10">
       <div className="flex justify-center items-center gap-10 my-20">
         <div className="w-7/10 mx-auto text-center my-20">
           <h1 className="text-5xl text-black font-bold text-center mb-8">
