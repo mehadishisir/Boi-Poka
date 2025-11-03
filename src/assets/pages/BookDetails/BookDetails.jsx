@@ -1,11 +1,16 @@
 import React from "react";
 import { useLoaderData, useParams, Link } from "react-router";
+import { addToLocalstorage } from "../../components/utility/localStorage";
 
 const BookDetails = () => {
   const { id } = useParams();
   const Id = parseInt(id);
   const data = useLoaderData();
   const bookDetails = data.find((book) => book.bookId === Id);
+
+  const handleMarkAsRead = (id) => {
+    addToLocalstorage(id);
+  };
 
   if (!bookDetails) {
     return (
@@ -89,7 +94,12 @@ const BookDetails = () => {
         <div className="divider my-0"></div>
 
         <div className="flex gap-4 mt-4">
-          <button className="btn btn-primary w-32">Read</button>
+          <button
+            onClick={() => handleMarkAsRead(id)}
+            className="btn btn-primary w-32"
+          >
+            Mark as Read
+          </button>
           <button className="btn btn-outline btn-secondary w-32">
             Wishlist
           </button>
